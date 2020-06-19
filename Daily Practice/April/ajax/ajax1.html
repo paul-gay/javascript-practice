@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax 1 - Text File</title>
+</head>
+<body>
+    <button id="button">Get Text File</button>
+    <br><br>
+    <div id="text"></div>
+
+    <script>
+        // create event listener
+        document.getElementById('button').addEventListener('click', loadText);
+
+        function loadText() {
+            // console.log('button clicked');
+            // create XHR object
+            var xhr = new XMLHttpRequest();
+            // console.log(xhr);
+            // call open function takes in type, url/file, async or not
+            xhr.open('GET', 'sample.txt', true);
+            console.log('READYSTATE', xhr.readyState);
+
+            // optional -- used for loaders
+            xhr.onprogress = function() {
+                console.log('READYSTATE', xhr.readyState);
+            }
+
+            // new way
+            xhr.onload = function() {
+                console.log('READYSTATE', xhr.readyState);
+                // check for status of response
+                if(this.status == 200) {
+                    // console.log(this.responseText);
+                    document.getElementById('text').innerHTML = this.responseText;
+                } else if(this.status = 400) {
+                    document.getElementById('text').innerHTML = 'Not Found';
+                }
+            }
+
+            // need to have handler in case something goes wrong
+            xhr.onerror = function() {
+                console.log("error");
+            }
+
+
+             // old way
+            //  xhr.onreadystatechange = function() {
+            //      // need to check for response status AND readyState 
+            //      if(this.readyState == 4 && this.status == 200) {
+            //         console.log(this.responseText);
+            //      }
+            //  }
+            
+
+            // sends requests
+            xhr.send();
+
+        }
+    </script>
+</body>
+</html>

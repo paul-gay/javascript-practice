@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: coral url('https://i.pinimg.com/originals/3c/24/46/3c24462450c2a902bf7e18f3d9aada81.jpg');
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100vh;
+    font-size: 18px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    /* if the content proceeds outside its box then that content will be hidden whilst a scroll bar should be visible for users to read the rest of the conten */
+    overflow: auto;
+    /* display: flex; */
+}
+
+header {
+    /* The div will grow in same proportion as the window-size */
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aquamarine; */
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+.counters {
+    background: #0f479a;
+    color: whitesmoke;
+    padding: 40px 20px;
+    border-top: 3px lightskyblue solid;
+}
+
+.counters .container {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+}
+
+.counters i {
+    color: lightskyblue;
+    margin-bottom: 5px;
+}
+
+.counters .counter {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+@media(max-width: 700px) {
+    .counters .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* take direct div under .counters .container and apply styles to only the first and second divs */
+    .counters .container > div:nth-of-type(1), .counters .container > div:nth-of-type(2) {
+        border-bottom: solid 1px lightskyblue;
+        padding-bottom: 20px;
+    }
+}

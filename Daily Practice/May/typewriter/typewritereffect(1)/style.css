@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.intro {
+    display: flex;
+    color: #fff;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://images.pexels.com/photos/747964/pexels-photo-747964.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260els.com/photo/person-on-a-bridge-near-a-lake-747964/);
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 8rem;
+}
+
+.typing {
+    margin-left: 10px;
+    position: relative;
+}
+
+.typing::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 5%;
+    border-right: solid 2px #fff;
+    animation: blink 0.7s infinite ease;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

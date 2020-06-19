@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(-45deg, rgba(131, 58, 180, 0.8) 0%, rgba(253, 29, 29, 0.8) 50%, rgba(252, 176, 69, 0.8) 100%),
+    url(https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80) no-repeat center center / cover;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper h2 {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
+    font-size: 4rem;
+}
+
+.wrapper p {
+    color: #fff;
+    font-size: 1.25rem;
+    margin: 0;
+    line-height: 35px;
+}
+
+
+.wrapper a {
+    background: rgb(58, 45, 116);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 30px 0;
+}
+
+span::before {
+    content: '';
+    animation: animate infinite 5s;
+}
+
+@keyframes animate {
+    0% {
+        content: 'Designer';
+    }
+
+    33% {
+        content: 'Developer';
+    }
+    
+    66% {
+        content: 'Photographer';
+    }
+    100% {
+        content: 'Food Blogger';
+    }
+}
